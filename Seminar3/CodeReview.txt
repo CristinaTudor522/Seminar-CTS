@@ -1,6 +1,6 @@
 Code Review
 
-Faza 1. Conventii de nume + valori hard-codate(magic numbers)
+Faza 1. Conventii de nume + valori hard-codate (magic numbers)
 		- numele clasei nu este ok; nu sugereaza codul clasei
 		- numele functiei nu este ok
 		- numele argumentelor functiei nu sunt ok
@@ -15,3 +15,9 @@ Faza 1. Conventii de nume + valori hard-codate(magic numbers)
 Faza 2.Single Responsability si KISS pt functii
 		- metoda calculeaza prea multe valori intermediare
 		- se repeta o parte din prelucrari
+		
+Faza 3. SOLID
+		- eliminare switch prin tratarea primului caz (NEW) in mod generic
+		- eliminare dependente legate de validarea datelor 
+		-eliminare dependente legate de prelucrarea discount-ului
+		
