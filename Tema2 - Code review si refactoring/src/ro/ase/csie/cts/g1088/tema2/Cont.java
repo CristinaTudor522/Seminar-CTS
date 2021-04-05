@@ -2,9 +2,9 @@ package ro.ase.csie.cts.g1088.tema2;
 
 public class Cont {
 	
-	double	valoareImprumut,rataDobanda;	
+	double	valoareImprumut;
+	double rataDobanda;	
 	int	perioada;
-	
 	String tipCont;
 	
 	public static final int NR_ZILE_MAXIM=365;
@@ -55,10 +55,6 @@ public class Cont {
 			}
 		}
 		return	comisionTotal;
-	}
-	
-	public void afiseaza() {
-		System.out.println("Acesta este un cont bancar! ");
 	}
 
 	@Override
