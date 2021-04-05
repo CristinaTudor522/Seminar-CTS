@@ -2,13 +2,14 @@ package ro.ase.csie.cts.g1088.tema2;
 
 public class Cont {
 	
-	double	valoareImprumut,rata;	
-	int	zileActiv;
+	double	valoareImprumut,rataDobanda;	
+	int	perioada;
 	
 	String tipCont;
 	
 	public static final int NR_ZILE_MAXIM=365;
 	public static final int NR_LUNI_MAXIM=12;
+	public static final double PROCENT_COMISION=0.0125;
 	
 	public Cont(double valoare, double rata, String tip_cont) throws ExceptieValoareInvalida {
 		if(valoare < 0) {
@@ -18,7 +19,7 @@ public class Cont {
 		{
 			this.valoareImprumut = valoare;
 		}
-		this.rata = rata;
+		this.rataDobanda = rata;
 		this.tipCont= tip_cont;
 	}
 	
@@ -26,12 +27,12 @@ public class Cont {
 		return this.valoareImprumut;
 	}
 	
-	public double getRata() {
-		return this.rata;
+	public double getRataDobanda() {
+		return this.rataDobanda;
 	}
 	
-	public double getRataLunara() {
-		return this.rata/NR_LUNI_MAXIM;
+	public double getRataDobandaLunara() {
+		return this.rataDobanda/NR_LUNI_MAXIM;
 	}
 	
 	public void setValoareImprumut(double valoare) throws ExceptieValoareInvalida{
@@ -48,9 +49,9 @@ public class Cont {
 		double comisionTotal = 0.0;
 		for	(int  i=0;i<conturi.length;i++) {
 			if(conturi[i].tipCont.equals(TipCont.PREMIUM)||conturi[i].tipCont.equals(TipCont.SUPER_PREMIUM)) {
-				comisionTotal+=.0125	* 
+				comisionTotal+=PROCENT_COMISION	* 
 				(conturi[i].valoareImprumut * Math.pow
-						(conturi[i].rata,(conturi[i].zileActiv/NR_ZILE_MAXIM)) - conturi[i].valoareImprumut);	
+						(conturi[i].rataDobanda,(conturi[i].perioada/NR_ZILE_MAXIM)) - conturi[i].valoareImprumut);	
 			}
 		}
 		return	comisionTotal;
@@ -64,10 +65,10 @@ public class Cont {
 	public String toString() {
 		return "Imprumut: " 
 				+ this.valoareImprumut + "; "
-				+ "rata: "
-				+ this.rata+ "; "
-				+ "zile active:"
-				+ this.zileActiv+ ";"
+				+ "rataDobanda: "
+				+ this.rataDobanda+ "; "
+				+ "perioada: "
+				+ this.perioada+ ";"
 				+ "tip: "
 				+ this.tipCont+ ";";
 	}
