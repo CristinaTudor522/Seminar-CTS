@@ -1,0 +1,37 @@
+Code review:
+
+1. denumirea pachetului nu este ok -> redenumesc pachetul conform sablonului utilizat
+2. tipurile de conturi trebuie retinute intr-un enum -> creez un enum cu denumirea sugestiva TipCont, dupa care inlocuiesc peste tot in cod
+3. variabila tip_cont ar fi util sa fie de tip String -> transform tip_cont din int in String, cu denumirea variabilei tipCont si modific peste tot unde aparea initial
+4. denumirea tuturor variabilelor o voi face dupa formatul mixtedCamelCase
+5. denumirea metodei imprumut ar trebui sa fie getValoareImprumut
+6. denumirea metodei setValoare ar trebui sa fie setValoareImprumut
+7. blocul format din intructiunea throw new Exception(); ar trebui sa fie intre paranteze acolade
+8. lipsa spatiilor dintre metodele setValoareImprumut, to_string, print, dar si din alte locuri
+9. denumirea metodei to_string ar trebui sa fie dupa formatul UpperCamelCase -> toString, dar cel mai bine ar fi sa fie suprascrisa
+10. denumirea metodei calculeaza ar trebui sa fie calculazaComision pentru a avea o denumire mai sugestiva si sa aiba indentari in interiorul ei corespunzatoare fiecarui bloc de instructiuni
+11. instructiunea if din cadrul metodei mentionate anterior are nevoie de paranteze acolade pentru a surprinde blocul de intructiuni
+12. metoda toString ar trebui implementata in limba romana si "aranjata" mai frumos, pe coloane
+13. metoda print ar trebui sa se numeasca afiseaza, variabila vb sa nu existe deoarece nu este utilizata, iar textul afisat la consola sa fie in romana
+14. variabila temp ar tebui sa fie o constanta declarata si initializata la nivel global, cu denumirea NR_ZILE_MAXIM si utilizata in cod, in cadrul metodei calculeazaComision
+15. variabila intermediara cont utilizata in cadrul metodei calculeazaComision nu este utila, deoarece doar incarca codul, asadar o voi elimina
+16. comentarea codului il transforma in zombie, deci voi elimina sectiunilor de comentarii
+17. utilizarea unei exceptii specifice, definita cu ajutorul unei clase, in detrimentul exceptiei generale folosita deja
+18. referinta this este utilizata doar in anumite cazuri, nu de fiecare data cand este nevoie, deci va trebui completata
+19. nu exista o clasa definita pentru testarea codului -> creearea unei clase de tip main
+20. metoda getRataLunara nu calculeaza ceea ce trebuie -> in loc de valoareImprumut * rata ar trebui rata/12
+21. afisarea excesiva de mesaje la consola atunci cand este apelata o metoda -> eliminarea acestora
+
+
+Gruparea problemelor pe categorii
+
+- Meaningful Names -> pentru denumirile de metode si variabile
+- Methods -> pentru metode si tot ce tine de validare, instructiunile din cadrul lor
+- Formating -> pentru formatarea textului (spatii libere, indentari)
+- General Programming -> pentru suprascrierea metodei toString
+- Enums and Annotation -> in cazul utilizarii enumului in detrimentul anumitor variabile
+- Comments -> pentru eliminarea comentariilor existente in cod
+- Exceptions -> pentru definirea de clase de exceptii specifice
+- Classes -> pentru utilizarea de clase ce definesc exceptii
+- Testing -> clasa folosita pentru testarea codului
+- Confidential Information -> informatiile afisate la consola in ceea ce priveste valoarea imprumutului, cat si rata
