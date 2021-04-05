@@ -13,7 +13,7 @@ public class Cont {
 	
 	public Cont(double valoare, double rata, String tip_cont) throws ExceptieValoareInvalida {
 		if(valoare < 0) {
-			throw new ExceptieValoareInvalida();
+			throw new ExceptieValoareInvalida("Atentie, valoarea introdusa trebuie sa fie pozitiva !");
 		}
 		else
 		{
@@ -37,7 +37,7 @@ public class Cont {
 	
 	public void setValoareImprumut(double valoare) throws ExceptieValoareInvalida{
 		if(valoare < 0) {
-			throw new ExceptieValoareInvalida();
+			throw new ExceptieValoareInvalida("Atentie, valoarea introdusa trebuie sa fie pozitiva !");
 		}
 		else
 		{
