@@ -1,25 +1,32 @@
 package ro.ase.csie.cts.g1088.tema2;
 
+import ro.ase.csie.cts.g1088.tema2.exceptii.ExceptieValoareInvalida;
+import ro.ase.csie.cts.g1088.tema2.module.InterfataValidare;
+
 public class Cont {
 	
 	double	valoareImprumut;
 	double rataDobanda;	
 	int	perioada;
-	String tipCont;
+	TipCont tipCont;
 	
-	public static final int NR_ZILE_MAXIM=365;
-	public static final int NR_LUNI_MAXIM=12;
-	public static final double PROCENT_COMISION=0.0125;
+	public static final int NR_ZILE_MAXIM = 365;
+	public static final double PROCENT_BROKER = 0.0125;
+	public static final int NR_LUNI_MAXIM = 12;
 	
-	public Cont(double valoare, double rata, String tip_cont) throws ExceptieValoareInvalida {
-		if(valoare < 0) {
-			throw new ExceptieValoareInvalida("Atentie, valoarea introdusa trebuie sa fie pozitiva !");
+	InterfataValidare modulValidare = null;
+	
+	public Cont() {
+
+	}
+
+	public Cont(InterfataValidare valoare, TipCont tip_cont) {
+		if(valoare == null) {
+			throw new NullPointerException();
 		}
-		else
-		{
-			this.valoareImprumut = valoare;
+		else {
+			this.modulValidare = valoare;
 		}
-		this.rataDobanda = rata;
 		this.tipCont= tip_cont;
 	}
 	
@@ -31,13 +38,17 @@ public class Cont {
 		return this.rataDobanda;
 	}
 	
+	public double getRataDobandaTotala() {
+		return this.valoareImprumut*this.rataDobanda;
+	}
+	
 	public double getRataDobandaLunara() {
-		return this.rataDobanda/NR_LUNI_MAXIM;
+		return getRataDobandaTotala()/ NR_LUNI_MAXIM;
 	}
 	
 	public void setValoareImprumut(double valoare) throws ExceptieValoareInvalida{
 		if(valoare < 0) {
-			throw new ExceptieValoareInvalida("Atentie, valoarea introdusa trebuie sa fie pozitiva !");
+			throw new ExceptieValoareInvalida("Atentie, valoarea introdusa trebuie sa fie pozitiva!");
 		}
 		else
 		{
@@ -45,11 +56,11 @@ public class Cont {
 		}
 	}
 	
-	public static double calculeazaComision(Cont[] conturi) {
+	public static double calculeazaComisionTotal(Cont[] conturi) {
 		double comisionTotal = 0.0;
 		for	(int  i=0;i<conturi.length;i++) {
 			if(conturi[i].tipCont.equals(TipCont.PREMIUM)||conturi[i].tipCont.equals(TipCont.SUPER_PREMIUM)) {
-				comisionTotal+=PROCENT_COMISION	* 
+				comisionTotal+=PROCENT_BROKER* 
 				(conturi[i].valoareImprumut * Math.pow
 						(conturi[i].rataDobanda,(conturi[i].perioada/NR_ZILE_MAXIM)) - conturi[i].valoareImprumut);	
 			}

@@ -1,24 +1,33 @@
 package ro.ase.csie.cts.g1088.tema2;
 
+import java.util.ArrayList;
+import ro.ase.csie.cts.g1088.tema2.exceptii.ExceptiePerioadaInvalida;
+import ro.ase.csie.cts.g1088.tema2.exceptii.ExceptieRataInvalida;
+import ro.ase.csie.cts.g1088.tema2.exceptii.ExceptieValoareInvalida;
+import ro.ase.csie.cts.g1088.tema2.module.ModulValidare;
+
 public class TestCont {
 
-	public static void main(String[] args) {
-
-		try {
-			System.out.println("---------------------Contul 1--------------------");
-			Cont cont1 = new Cont(1500.75, 50.2, "PREMIUM");
-			System.out.println("Valoarea imprumutului este "+cont1.getValoareImprumut());
-			System.out.println("Rata dobanzii este "+cont1.getRataDobanda());
-			System.out.println("Rata lunara a dobanzii este "+cont1.getRataDobandaLunara());
-			
-			System.out.println("---------------------Contul 2--------------------");
-			Cont cont2= new Cont(15,4,"STANDARD");
-			cont2.setValoareImprumut(400.5);
-			System.out.println("Valoarea imprumutului este  " + cont2.getValoareImprumut());
-			
-		} catch (ExceptieValoareInvalida e) {
-			e.printStackTrace();
+		public static ArrayList<Object> module =new ArrayList<>();
+		
+		public void start() {
+			ro.ase.csie.cts.g1088.tema2.module.InterfataValidare modulValidare = new ModulValidare();
+			module.add(modulValidare);
 		}
+		
+		public static void main(String[] args) {
+		
+			Cont cont =new Cont (new ModulValidare(), TipCont.PREMIUM);
+			
+			cont.valoareImprumut = 7500.8;
+			cont.rataDobanda = 5.2;
+			cont.perioada =700;
+			
+			System.out.println("---------------------Informatii despre cont--------------------");
+			System.out.println("Valoarea imprumutului este "+cont.getValoareImprumut());
+			System.out.println("Rata dobanzii este "+cont.getRataDobanda());
+			System.out.println("Rata totala a dobanzii este "+cont.getRataDobandaTotala());
+			System.out.println("Rata lunara a dobanzii este "+cont.getRataDobandaLunara());
 	}
 
 }

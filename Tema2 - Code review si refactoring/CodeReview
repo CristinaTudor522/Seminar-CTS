@@ -2,23 +2,26 @@ Code review:
 
 1. denumirea pachetului nu e ok -> il voi redenumi conform sablonului utilizat
 2. tipurile de conturi trebuie retinute intr-un enum -> creez un enum cu denumirea sugestiva TipCont, dupa care inlocuiesc peste tot in cod
-3. variabila tip_cont ar fi util sa fie de tip String -> transform tip_cont din int in String, cu denumirea variabilei tipCont si modific peste tot unde aparea initial
+3. variabila tip_cont ar fi util sa fie de tipul enumului creat anterior -> transform tip_cont din int in TipCont, cu denumirea variabilei tipCont si modific peste tot unde aparea initial
 4. denumirea variabilelor nu este ok -> voi utiliza formatul mixtedCamelCase, redenumindu-le sugestiv
-5. denumirea metodei metodelor nu este sugestiva -> o voi transforma in functie de aplicabilitatea fiecareia
+5. denumirea metodelor nu este sugestiva -> o voi transforma in functie de aplicabilitatea fiecareia
 6. toate blocurile de instructiuni le voi pune intre paranteze acolade, chiar daca sunt formate dintr-o singura instructiune
-7. lipsa anumitor delimitari (spatii libere, indentari)-> le voi adauga atat intre metode cat si in interiorul acestora
+7. lipsa anumitor delimitari (spatii libere, indentari)-> le voi adauga atat intre metode(rand liber) cat si in interiorul acestora(spatii libere si indentari)
 8. metoda to_string ar trebui sa fie suprascrisa
 9. textele in limba engleza nu sunt ok -> le voi transforma in romana
-10. variabila temp ar tebui sa fie o constanta declarata si initializata la nivel global, cu denumirea NR_ZILE_MAXIM si utilizata in cod, in detrimentul valorii 365, in cadrul metodei calculeazaComision
+10. variabila temp ar tebui sa fie o constanta declarata si initializata la nivel global, cu denumirea NR_ZILE_MAXIM si utilizata in cod, in detrimentul valorii 365, in cadrul metodei calculeazaComisionTotal
 11. variabila intermediara cont utilizata in cadrul metodei calculeazaComision nu este utila, deoarece doar incarca codul, asadar o voi elimina
-12. comentarea codului il transforma in zombie, deci voi elimina sectiunilor de comentarii
-13. voi utiliza exceptii specifice, definite cu ajutorul unor clase, in detrimentul exceptiei generale folosita deja
+12. comentarea codului il transforma in zombie, deci voi elimina sectiunile de comentarii
+13. voi utiliza exceptii specifice pentru validari, definite cu ajutorul unor clase, in detrimentul exceptiei generale folosita deja
 14. referinta this este utilizata doar in anumite cazuri, nu de fiecare data cand este nevoie, deci va trebui completata
 15. nu exista o clasa definita pentru testarea codului -> creearea unei clase de tip main
-16. metoda getRataLunara nu calculeaza ceea ce trebuie -> in loc de valoareImprumut * rata ar trebui rata/12, unde 12 va fi o o constanta declarata la nivel global
+16. metoda getRataLunara nu calculeaza ceea ce trebuie, denumirea nu este gresita pentru ceea ce face defapt -> voi denumi metoda getRataDobandaTotala, dupa care voi creea alta metoda pentru a afla rataDobandaLunara
 17.  afisarea excesiva de mesaje la consola, in metode precum cele accesor, atunci cand se apeleaza -> eliminarea acestora
-18. metoda print() este nefolositoare -> o voi sterge, deoarece nu are nicio relevanta
+18. metoda print() este nefolositoare, la fel si variabila vb -> le voi sterge, deoarece nu au nicio relevanta
 19. fiecare variabila o voi trece pe rand separat
+20. validarile nu sunt prezente peste tot -> voi adauga validare pentru variabila rata
+21. implementam / genram constructorul default, deoarece lipseste
+22. completem constructorul deja existent pentru a-l face cu toti parametrii
 
 Gruparea problemelor pe categorii
 
@@ -32,3 +35,4 @@ Gruparea problemelor pe categorii
 - Classes -> pentru utilizarea de clase ce definesc exceptii
 - Testing -> clasa folosita pentru testarea codului
 - Confidential Information -> informatiile afisate la consola in ceea ce priveste valoarea imprumutului, cat si rata
+- Input Validation -> datele introduse ca si imput nu sunt validate
