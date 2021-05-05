@@ -1,0 +1,14 @@
+Titlu tema licenta: 
+	Aplicatie informatica pentru un centru medical
+	
+Problema:
+	Sa se utilizeze o librarie externa ce contine o serie de utilizatori ai aplicatiilor medicale. La acest moment aplicatia este folosita doar de catre utilizatori proprii ce cunosc centrul medical.
+	
+Avantaje:
+	-este utilizata o interfata comuna
+	-usor de implementat
+	
+Dezavantaje:
+	-se pot pierde atribute specifice userilor
+
+

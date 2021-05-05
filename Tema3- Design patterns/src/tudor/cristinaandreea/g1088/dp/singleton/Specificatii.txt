@@ -1,0 +1,15 @@
+Titlu tema licenta: 
+	Aplicatie informatica pentru un centru medical
+	
+Problema:
+	Sa se realizeze o conexiune eficienta la baza de date, astfel incat utilizatorii sa foloseasca o singura conexiune, programatorii sa nu poata construi/utiliza mai multi useri asociatii bazei de date, iar cel care se conecteaza pe post de user sa foloseasca un obiect unic ce ii permite conexiunea.
+	
+Avantaje:
+	-nu se permite duplicarea de useri/instante
+	-usor de implementat
+	-este lazy instantiation
+	
+Dezavantaje:
+	-pot aparea probleme de sincronizare
+
+

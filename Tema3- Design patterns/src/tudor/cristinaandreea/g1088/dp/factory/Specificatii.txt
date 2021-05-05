@@ -1,0 +1,15 @@
+Titlu tema licenta: 
+	Aplicatie informatica pentru un centru medical
+	
+Problema:
+	Sa se creeze tipuri diferite de utilizatori pentru aplicatie. In cadrul aplicatiei pot exista: PATIENT, DOCTOR. In viitor in cadrul aplicatiei se pot modifica/adauga tipuri de useri.
+	
+Avantaje:
+	-userii creati au in comun interfata
+	-userii sunt gestionati printr-o interfata comuna chiar daca sunt de tipuri diferite
+	-usor de implementat
+	
+Dezavantaje:
+	
+
+

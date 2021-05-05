@@ -12,7 +12,7 @@ public class TestProxy {
 		//adaugam proxy
 		login = new ProxyLogin(login);
 		
-		String[] parole = new String[] {"1234", "root", "admin","root12", "root1234"};
+		String[] parole = new String[] {"root1234", "root", "admin","root12", "1234"};
 		for(String parola : parole) {
 			if(login.login("admin", parola)) {
 				System.out.println("Am gasit parola: "+parola);

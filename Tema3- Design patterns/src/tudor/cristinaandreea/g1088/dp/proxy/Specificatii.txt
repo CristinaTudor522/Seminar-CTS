@@ -1,0 +1,15 @@
+Titlu tema licenta: 
+	Aplicatie informatica pentru un centru medical
+	
+Problema:
+	Sa se adauge un filtru suplimentar pentru optiunea de login.Login-ul in cadrul aplicatiei se face pe baza de username(email) si parola. Sa se modifice modul de login existent astfel incat sa se limiteze numarul de incercari la maxim 3.
+	
+Avantaje:
+	-se gestioneaza referinta catre obiectul real
+	-se implementeaza obiectul real
+	-se controleaza accesul la obiectul real
+	
+Dezavantaje:
+	
+
+
