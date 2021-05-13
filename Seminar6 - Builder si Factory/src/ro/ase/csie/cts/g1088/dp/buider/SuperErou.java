@@ -76,8 +76,10 @@ public class SuperErou {
 			return this;
 		}
 		
-		public  SuperErou build() {
-			return superErou;
+		public  SuperErou build() // cunoscuta si sub denumirea de get 
+		{
+			return superErou; 
+			//sau return this.superErou
 		}
 	}
 

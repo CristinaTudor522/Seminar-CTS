@@ -42,7 +42,7 @@ public class Caracter3D implements Cloneable{
 	}
 
 	@Override
-	protected Object clone() throws CloneNotSupportedException {
+	public Object clone() throws CloneNotSupportedException {
 		//NU prin acelasi constructor -asta era problema initiala
 		//Caracter3D copie=new Caracter3D(this.fisierModel3D);
 		
