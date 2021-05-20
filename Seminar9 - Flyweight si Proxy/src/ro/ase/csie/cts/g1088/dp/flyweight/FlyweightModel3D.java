@@ -13,7 +13,7 @@ public class FlyweightModel3D implements InterfataFlyweightModel3D{
 		this.numeModel = numeModel;
 	}
 
-	@Override
+	@Override // echivalent cu getEcran
 	public void afisareEcran(DateEcran date) {
 		System.out.println(
 				String.format("Afisare %s la coordonatele %d,%d,%d cu %s", 
