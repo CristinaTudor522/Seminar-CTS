@@ -9,17 +9,26 @@ public class Retea extends UnitateAbstractaServer{
 
 	@Override
 	public String getAdresaIp() {
-		throw new UnsupportedOperationException();
+		for(UnitateAbstractaServer unitate : unitati) {
+			return unitate.getAdresaIp();
+		}
+		return null;
 	}
 
 	@Override
 	public int getPort() {
-		throw new UnsupportedOperationException();
+		for(UnitateAbstractaServer unitate : unitati) {
+			return unitate.getPort();
+		}
+		return 0;
 	}
 
 	@Override
 	public int getNrMaximConexiuni() {
-		throw new UnsupportedOperationException();
+		for(UnitateAbstractaServer unitate : unitati) {
+			return unitate.getNrMaximConexiuni();
+		}
+		return 0;
 	}
 
 	@Override

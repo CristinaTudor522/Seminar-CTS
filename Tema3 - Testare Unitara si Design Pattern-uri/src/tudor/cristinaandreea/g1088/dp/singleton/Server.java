@@ -13,7 +13,6 @@ public class Server {
 	}
 
 	private Server(String adresaIp, int port, int nrMaximConexiuni) {
-		System.out.println("Apel constructor cu parametrii");
 		this.adresaIp = adresaIp;
 		this.port = port;
 		this.nrMaximConexiuni = nrMaximConexiuni;

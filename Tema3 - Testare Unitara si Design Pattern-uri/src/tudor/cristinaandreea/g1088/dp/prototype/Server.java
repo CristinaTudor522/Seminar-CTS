@@ -3,7 +3,7 @@ package tudor.cristinaandreea.g1088.dp.prototype;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Server implements Cloneable{
+public class Server implements Cloneable, InterfataSever{
 	
 	String adresaIp;
 	int port;
@@ -16,14 +16,14 @@ public class Server implements Cloneable{
 		
 	}
 
-	public Server(String adresaIp) {
-		System.out.println("Se incarca serverul cu adresa IP:  "+adresaIp);
+	public Server(String adresaIp, int port) {
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		this.adresaIp = adresaIp;
+		this.port = port;
 		
 		Random random = new Random();
 		retea = new ArrayList<>();
@@ -52,6 +52,33 @@ public class Server implements Cloneable{
 		copieServer.retea = (ArrayList<Integer>) this.retea.clone();
 		
 		return copieServer;
+	}
+
+	@Override
+	public String getAdresaIp() {
+		return this.adresaIp;
+	}
+
+	@Override
+	public int getPort() {
+		return this.port;
+	}
+
+	@Override
+	public int getNrMaximConexiuni() {
+		return this.getNrMaximConexiuni();
+	}
+
+	@Override
+	public boolean conectare() {
+		System.out.println(String.format("Serverul cu adrea IP %s se conecteaza!", adresaIp));
+		return true;
+	}
+	
+	@Override
+	public boolean deconectare() {
+		System.out.println(String.format("Serverul cu adrea IP %s se deconecteaza!", adresaIp));
+		return true;
 	}	
 	
 }	
