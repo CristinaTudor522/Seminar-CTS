@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import tudor.cristinaandreea.g1088.clase.Produs;
 import tudor.cristinaandreea.g1088.exceptii.ExceptieNume;
@@ -49,7 +50,7 @@ public class TestProdusCerinta1 {
 		fail("Not yet implemented");
 	}
 	
-	
+	@Category(TestRightCategory.class)
 	@Test
 	public void testConstructorParametriiNumePretConformanceRight() throws ExceptieNume, ExceptiePret {
 		String numeNou="paine";
@@ -62,6 +63,7 @@ public class TestProdusCerinta1 {
 				String.valueOf(produsInitial.getPret()));
 	}
 	
+	@Category(TestRightCategory.class)
 	@Test
 	public void testConstructorTotiParametriiConformanceRight() {
 		String numeNou="paine";

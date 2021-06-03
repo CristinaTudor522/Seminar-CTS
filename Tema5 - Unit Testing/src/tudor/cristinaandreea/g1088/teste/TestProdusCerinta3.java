@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import tudor.cristinaandreea.g1088.clase.Produs;
 
@@ -47,6 +48,7 @@ public class TestProdusCerinta3 {
 		fail("Not yet implemented");
 	}
 	
+	@Category(TestRightCategory.class)
 	@Test
 	public void testGetProcentSaptamaniSlabeRight() {
 		produsInitial.setVanzari(produseVanduteSaptamanal);
@@ -59,8 +61,9 @@ public class TestProdusCerinta3 {
 		assertEquals("Test getProcentSaptamaniSlabe",procentCalculat,procentNou);
 	}
 	
+	@Category(TestRightCategory.class)
 	@Test
-	public void testGetIndexSaptamaniCuVanzariMaxime() {
+	public void testGetIndexSaptamaniCuVanzariMaximeRight() {
 		produsInitial.setVanzari(produseVanduteSaptamanal);
 		
 		ArrayList<Integer> saptamaniNoi=new ArrayList<Integer>(Arrays.asList(2));

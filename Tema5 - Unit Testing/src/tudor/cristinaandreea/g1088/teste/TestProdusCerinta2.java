@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import tudor.cristinaandreea.g1088.clase.Produs;
 
@@ -46,6 +47,7 @@ public class TestProdusCerinta2 {
 		fail("Not yet implemented");
 	}
 	
+	@Category(TestRightCategory.class)
 	@Test
 	public void testAdaugaSaptamanaRight() {
 		int nrProduseVandute=7;
@@ -53,6 +55,7 @@ public class TestProdusCerinta2 {
 		assertEquals("Test adaugaSaptamana",produsInitial.getNrProduseVandute(1),nrProduseVandute);
 	}
 	
+	@Category(TestRightCategory.class)
 	@Test 
 	public void testGetNrProduseVanduteRight() {
 		int nrProduseVandute=10;
@@ -60,8 +63,9 @@ public class TestProdusCerinta2 {
 		assertEquals("Test getNrProduseVandute",produsInitial.getNrProduseVandute(2),nrProduseVandute);
 	}
 	
+	@Category(TestRightCategory.class)
 	@Test
-	public void testGetNrSaptamaniPesteMedie() {
+	public void testGetNrSaptamaniPesteMedieRight() {
 		int nrSaptamaniPesteMedie=2;
 		int limitaVanzari=8;
 		
